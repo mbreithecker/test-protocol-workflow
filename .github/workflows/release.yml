@@ -11,5 +11,7 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@main
-      - name: Generate the artifacts
-        uses: skx/github-action-build@master
+      - name: Build stuff
+        run: |
+          echo Hello World...
+
