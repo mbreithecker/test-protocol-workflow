@@ -6,7 +6,7 @@
 
 ![banner](https://github.com/kyve-org/assets/raw/main/banners/EVM.png)
 
-## Configuration  
+## Configuration    
 
 ```json   
 {
