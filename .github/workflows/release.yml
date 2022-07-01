@@ -17,3 +17,12 @@ jobs:
           yarn build
           yarn build:binaries
           ls -lah
+      - name: Publish the Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.vars.outputs.tag_name }}
+          files: out/*
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
