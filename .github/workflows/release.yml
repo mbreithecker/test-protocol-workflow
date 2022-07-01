@@ -13,5 +13,7 @@ jobs:
         uses: actions/checkout@main
       - name: Build stuff
         run: |
-          echo Hello World...
-
+          yarn install
+          yarn build
+          yarn build:binaries
+          ls -lah
