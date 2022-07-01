@@ -10,7 +10,7 @@
 
 ```json   
 {
-  "rpc": "",
+  "rpc": "",   
   "github": "https://github.com/kyve-org/evm"
 }
 ```
