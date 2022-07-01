@@ -8,7 +8,7 @@
 
 ## Configuration  
 
-```json
+```json   
 {
   "rpc": "",
   "github": "https://github.com/kyve-org/evm"
