@@ -16,7 +16,12 @@ jobs:
           yarn install
           yarn build
           yarn build:binaries
-          ls -lah
+          cd out
+          zip kyve-linux.zip kyve-linux
+          rm kyve-linux
+          zip kyve-macos.zip kyve-macos
+          rm kyve-macos
+          cd ..
       - name: Publish the Release
         uses: softprops/action-gh-release@v1
         with:
