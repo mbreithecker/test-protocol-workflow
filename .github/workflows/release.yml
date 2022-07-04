@@ -11,17 +11,17 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@main
-      - name: Build stuff
-        run: |
-          yarn install
-          yarn build
-          yarn build:binaries
-          cd out
-          zip kyve-linux.zip kyve-linux
-          rm kyve-linux
-          zip kyve-macos.zip kyve-macos
-          rm kyve-macos
-          cd ..
+#      - name: Build stuff
+#        run: |
+#          yarn install
+#          yarn build
+#          yarn build:binaries
+#          cd out
+#          zip kyve-linux.zip kyve-linux
+#          rm kyve-linux
+#          zip kyve-macos.zip kyve-macos
+#          rm kyve-macos
+#          cd ..
       - name: Build Changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v3
