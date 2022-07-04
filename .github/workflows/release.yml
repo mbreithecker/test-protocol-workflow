@@ -35,7 +35,8 @@ jobs:
           tag_name: ${{ steps.vars.outputs.tag_name }}
           files: out/*
           prerelease: false
-          body: ${{steps.github_release.outputs.changelog}}
+#          body: ${{steps.github_release.outputs.changelog}}
+          body: "Hello World"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
