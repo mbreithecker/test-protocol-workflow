@@ -1,9 +1,9 @@
 name: integtaion-tests
 
-on:
-  push:
-    #TODO change it when release
-    branches: [ "main" ]
+#on:
+#  push:
+#    #TODO change it when release
+#    branches: [ "main" ]
 
 jobs:
   tests:
