@@ -55,10 +55,11 @@ jobs:
       - name: "go path"
         run: go env GOPATH
       - name: "version ignite"
-        run: ignite version
+        run: ignite help
         working-directory: ./chain
       - name: "proto"
-        run: ignite generate proto-go
+        run: | 
+          ignite generate proto-go
         working-directory: ./chain
       - name: "build"
         run: ignite chain build
