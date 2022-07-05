@@ -1,0 +1,67 @@
+name: integtaion-tests
+
+on:
+  push:
+    #TODO change it when release
+    branches: [ "main" ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./chain/test
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - name: "checkout chain repo"
+        uses: actions/checkout@v3
+        with:
+          repository: "KYVENetwork/chain"
+          path: "chain"
+          #          #TODO checkout to the current realise branch
+          ref: "feature/integration-tests"
+      - name: "Show Working directory"
+        run: ls
+        #      - name: "nodejs install"
+        #        uses: actions/setup-node@v3
+        #        with:
+        #          node-version: ${{ matrix.node-version }}
+        #          cache-dependency-path: ./chain/test/yarn.lock
+        #          cache: 'yarn'
+        #      - name: "dependency install"
+        #        run: yarn install --frozen-lockfile
+        #TODO add current branch as dependency
+      - name: "Set up Go"
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.18.3
+      - name: "install ignite"
+        run: curl https://get.ignite.com/cli@v0.22.2! | bash
+        working-directory: ./chain
+      - name: "print dir"
+        run: ls
+        working-directory: ./chain
+      - name: "print dir"
+        run: ls
+        working-directory: ./chain
+      - name: "print workspace"
+        run: echo $GITHUB_WORKSPACE
+      #      - name: "print workspace path"
+      #        run: cat  ${{env.WORKSPACE}}/chain/config.yml
+      - name: "go version"
+        run: go version
+      - name: "go path"
+        run: go env GOPATH
+      - name: "version ignite"
+        run: ignite version
+        working-directory: ./chain
+      - name: "proto"
+        run: ignite generate proto-go
+        working-directory: ./chain
+      - name: "build"
+        run: ignite chain build
+        working-directory: ./chain
+#      - name: "run tests"
+#        run: yarn test
