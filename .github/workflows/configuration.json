@@ -1,11 +1,15 @@
 {
   "categories": [
     {
-      "title": "## 🚀 Features",
-      "labels": ["feature"]
+      "title": "### Features",
+      "labels": ["feat"]
     },
     {
-      "title": "## 🐛 Fixes",
+      "title": "### Improvements",
+      "labels": ["chore"]
+    },
+    {
+      "title": "### Fixes",
       "labels": ["fix"]
     }
   ],
@@ -14,7 +18,7 @@
   "empty_template": "- no changes this time",
   "label_extractor": [
     {
-      "pattern": "(.) (.+)",
+      "pattern": "(chore|fix|feat)!?: (.*)",
       "target": "$1",
       "flags": "gu"
     }
