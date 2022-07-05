@@ -22,5 +22,11 @@
       "target": "$1",
       "flags": "gu"
     }
+  ],
+  "transformers": [
+    {
+      "pattern": "(chore|fix|feat)!?: (.*)",
+      "target": "$2"
+    }
   ]
 }
