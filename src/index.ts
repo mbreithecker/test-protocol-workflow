@@ -3,6 +3,7 @@ import { Network, Signature } from './types';
 import { fetchBlock } from './utils';
 import { name, version } from '../package.json';
 
+// test
 process.env.KYVE_RUNTIME = name;
 process.env.KYVE_VERSION = version;
 
